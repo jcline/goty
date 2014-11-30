@@ -49,11 +49,12 @@ func (con *IRCConn) Connect(server, nick string, name string) error {
 						}
 					}
 				}
+				close(con.Read)
+				close(con.Write)
 			}()
 
 			go func() {
-				for {
-					str := <-con.Write
+				for str := range con.Write{
 					//if closed(con.Write) {
 						//fmt.Fprintf(os.Stderr, "goty: write closed\n")
 						//break
