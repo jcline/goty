@@ -13,11 +13,6 @@ type Nick struct {
 	IRCMessage
 }
 
-type User struct {
-	user, mode, unused, realname string
-	IRCMessage
-}
-
 type Oper struct {
 	name, password string
 	IRCMessage
@@ -28,7 +23,7 @@ type User_Mode struct {
 	IRCMessage
 	added, removed []UserModes
 }
-
+/*
 type struct {
 	string
 	IRCMessage
@@ -83,3 +78,4 @@ type struct {
 	string
 	IRCMessage
 }
+*/
